@@ -17,4 +17,10 @@ public class RomanNumeralTest {
         String result = converter.integerToRomanNumeral(2);
         Assertions.assertEquals("II", result);
     }
+    @Test
+    public void convert2045IntoRomanNumerals() {
+        RomanNumeralConverter converter = new RomanNumeralConverter();
+        String result = converter.integerToRomanNumeral(2045);
+        Assertions.assertEquals("MMXLV", result);
+    }
 }

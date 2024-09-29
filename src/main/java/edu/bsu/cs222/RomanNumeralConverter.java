@@ -37,11 +37,25 @@ public class RomanNumeralConverter {
             Map.entry(1,"I")));
     public String integerToRomanNumeral(int num) {
         String resultString = "";
-        while(num>0){
-            if(Integer.toString(num).length()==4) {
-
-            }
+        if(Integer.toString(num).length()==4) {
+            int tempNum = num / 1000 * 1000;
+            resultString += romanNumeralKey.get(tempNum);
+            num -= tempNum;
         }
+        if(Integer.toString(num).length()==3) {
+            int tempNum = num / 100 * 100;
+            resultString += romanNumeralKey.get(tempNum);
+            num -= tempNum;
+        }
+        if(Integer.toString(num).length()==2) {
+            int tempNum = num / 10 * 10;
+            resultString += romanNumeralKey.get(tempNum);
+            num -= tempNum;
+        }
+        if(Integer.toString(num).length()==1) {
+            resultString += romanNumeralKey.get(num);
+        }
+
         return resultString;
     }
 }

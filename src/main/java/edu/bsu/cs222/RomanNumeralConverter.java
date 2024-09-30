@@ -40,6 +40,22 @@ public class RomanNumeralConverter {
         if(!resultString.isEmpty()) {
             return resultString;
         }
+        resultString = romanNumeralEquation(num);
+        return resultString;
+    }
+
+    private String numberLimitErrorCatch(int num) {
+        String result = "";
+        if (num < 1) {
+            result = "Error: Converter only accepts positive numbers";
+        } else if (num > 3000) {
+            result = "Error: Converter only accepts numbers up to 3000";
+        }
+        return result;
+    }
+
+    private String romanNumeralEquation(int num) {
+        String resultString = "";
         if(Integer.toString(num).length()==4) {
             int tempNum = num / 1000 * 1000;
             resultString += romanNumeralKey.get(tempNum);
@@ -58,18 +74,6 @@ public class RomanNumeralConverter {
         if(Integer.toString(num).length()==1) {
             resultString += romanNumeralKey.get(num);
         }
-
-
         return resultString;
-    }
-
-    private String numberLimitErrorCatch(int num) {
-        String result = "";
-        if (num < 1) {
-            result = "Error: Converter only accepts positive numbers";
-        } else if (num > 3000) {
-            result = "Error: Converter only accepts numbers up to 3000";
-        }
-        return result;
     }
 }

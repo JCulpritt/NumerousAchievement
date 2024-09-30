@@ -37,6 +37,12 @@ public class RomanNumeralConverter {
             Map.entry(1,"I")));
     public String integerToRomanNumeral(int num) {
         String resultString = "";
+        if(num < 1) {
+            return "Error: Converter only accepts positive numbers";
+        }
+        else if(num > 3000) {
+            return "Error: Converter only accepts numbers up to 3000";
+        }
         if(Integer.toString(num).length()==4) {
             int tempNum = num / 1000 * 1000;
             resultString += romanNumeralKey.get(tempNum);
@@ -55,6 +61,7 @@ public class RomanNumeralConverter {
         if(Integer.toString(num).length()==1) {
             resultString += romanNumeralKey.get(num);
         }
+
 
         return resultString;
     }

@@ -23,4 +23,26 @@ public class RomanNumeralTest {
         String result = converter.integerToRomanNumeral(2045);
         Assertions.assertEquals("MMXLV", result);
     }
+
+    @Test
+    public void convertNegative5intoRomanNumerals(){
+        RomanNumeralConverter converter = new RomanNumeralConverter();
+        String result = converter.integerToRomanNumeral(-5);
+        Assertions.assertEquals("Error: Converter only accepts positive numbers", result);
+    }
+
+    @Test
+    public void convert0intoRomanNumerals(){
+        RomanNumeralConverter converter = new RomanNumeralConverter();
+        String result = converter.integerToRomanNumeral(0);
+        Assertions.assertEquals("Error: Converter only accepts positive numbers", result);
+    }
+
+    @Test
+    public void convert5000intoRomanNumerals(){
+        RomanNumeralConverter converter = new RomanNumeralConverter();
+        String result = converter.integerToRomanNumeral(5000);
+        Assertions.assertEquals("Error: Converter only accepts numbers up to 3000", result);
+    }
 }
+

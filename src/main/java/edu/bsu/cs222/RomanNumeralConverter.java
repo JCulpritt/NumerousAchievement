@@ -34,7 +34,8 @@ public class RomanNumeralConverter {
             Map.entry(4,"IV"),
             Map.entry(3,"III"),
             Map.entry(2,"II"),
-            Map.entry(1,"I")));
+            Map.entry(1,"I"),
+            Map.entry(0,"")));
     public String integerToRomanNumeral(int num) {
         String resultString = numberLimitErrorCatch(num);
         if(!resultString.isEmpty()) {

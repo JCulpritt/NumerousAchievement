@@ -44,5 +44,18 @@ public class RomanNumeralTest {
         String result = converter.integerToRomanNumeral(5000);
         Assertions.assertEquals("Error: Converter only accepts numbers up to 3000", result);
     }
+
+    @Test
+    public void minEdgeTesting(){
+        RomanNumeralConverter converter = new RomanNumeralConverter();
+        String result = converter.integerToRomanNumeral(1);
+        Assertions.assertEquals("I", result);
+    }
+    @Test
+    public void maxEdgeTesting(){
+        RomanNumeralConverter converter = new RomanNumeralConverter();
+        String result = converter.integerToRomanNumeral(3000);
+        Assertions.assertEquals("MMM", result);
+    }
 }
 

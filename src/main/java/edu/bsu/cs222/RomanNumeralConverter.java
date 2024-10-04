@@ -7,7 +7,7 @@ public class RomanNumeralConverter {
     Map<Integer, String> romanNumeralKey = new HashMap<>(Map.ofEntries(
             Map.entry(3000,"MMM"),
             Map.entry(2000,"MM"),
-            Map.entry(1000,"MM"),
+            Map.entry(1000,"M"),
             Map.entry(900,"CM"),
             Map.entry(800,"DCCC"),
             Map.entry(700,"DCC"),
